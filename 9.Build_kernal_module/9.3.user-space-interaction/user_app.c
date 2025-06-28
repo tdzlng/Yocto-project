@@ -6,13 +6,13 @@
 
 #define CDEV_PATH "/dev/m_device"
 
-char write_buf[1024];
+char write_buf[1024]={0};
 
-int main(int argc, char**arv)
+int main(int argc, char*argv [])
 {   
     size_t len = 1024;
     if(argc>1){
-        memcpy(write_buf,arv[1],len);
+        memcpy(write_buf,argv[1],sizeof(argv[1]));
     } else {
         return -1;
     }
